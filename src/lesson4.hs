@@ -28,7 +28,7 @@ bmiTell height weight
     | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"  
     | bmi <= fat = "You're fat! Lose some weight, fatty!"  
     | otherwise   = "You're a whale, congratulations!"
-    where bmi = weight   / height ^ 2
+    where bmi = weight / height ^ 2
           skinny = 18.5
           normal = 25.0
           fat = 30.0
@@ -36,5 +36,8 @@ bmiTell height weight
 
 -- Let
 :{
-
+bmi :: (RealFloat a) => a -> a -> a
+bmi height weight =
+    let twoTimesHeight = height ^ 2
+    in weight / twoTimesHeight
 :}
