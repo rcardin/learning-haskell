@@ -34,3 +34,11 @@ elem' a (x:xs)
     | x == a = True
     | otherwise = elem' a xs
 :}
+:{
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) = 
+    let smallerThanHead = quicksort([a | a <- xs, a <= x])
+        biggerThanHead = quicksort([a | a <- xs, a > x])
+    in smallerThanHead ++ [x] ++ biggerThanHead
+:}
