@@ -37,3 +37,9 @@ quicksort' (x::xs)
 largestDivisible :: (Integral a) => a
 largestDivisible = head (filter p [100000, 99999..])
     where p x = x `mod` 3829 == 0
+
+sum' :: (Num a) => [a] -> a
+sum' xs = foldl (\acc x -> acc + x) 0 xs
+
+elem' :: (Eq a) => a -> [a] -> Bool
+elem' x xs = foldl (\acc y -> if y == x then True else acc ) False xs
