@@ -1,0 +1,4 @@
+Some stupid text, just to proof the getContents function.
+Shorty
+Can you see me on the standard output?
+
